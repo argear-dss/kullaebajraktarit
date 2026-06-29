@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#F4EFE5">
+<title>Kulla e Bajraktarit · Menu</title>
+<meta name="description" content="Menu — Kulla e Bajraktarit, Bogë, Alpet Shqiptare. Restorant, pije dhe karta e verës.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4EFE5; --bg2:#EEE7D8; --paper:#FBF8F1;
+    --ink:#2B2823; --muted:#5F574B; --line:#E4DBC9;
+    --olive:#6E7253; --olived:#565A3C; --logo:#1F1B16;
+    --serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--olive);outline-offset:3px;border-radius:3px}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;
+    line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    padding-bottom:46px;overflow-x:hidden;
+  }
+  .vh{position:absolute;width:0;height:0;overflow:hidden}
+
+  /* HERO */
+  .hero{text-align:center;padding:46px 24px 26px}
+  .logo{width:min(82%,340px);height:auto;display:block;margin:0 auto}
+  .place{margin-top:16px;font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+  .lang{margin-top:20px;display:inline-flex;gap:8px}
+  .lang button{
+    font:inherit;font-size:12px;font-weight:500;letter-spacing:.06em;cursor:pointer;
+    padding:7px 17px;border-radius:16px;border:1px solid var(--olive);background:transparent;
+    color:var(--olive);transition:.18s;
+  }
+  .lang button.active{background:var(--olive);color:#F6F2E8;border-color:var(--olive)}
+  .lang button:not(.active):hover{background:rgba(110,114,83,.08)}
+
+  /* CATBAR */
+  .catbar{
+    position:sticky;top:0;z-index:20;background:var(--bg2);
+    display:flex;justify-content:center;gap:4px;overflow-x:auto;scrollbar-width:none;
+    padding:0 10px;box-shadow:0 8px 18px -14px rgba(43,40,35,.30);
+  }
+  .catbar::-webkit-scrollbar{display:none}
+  .catbar a{
+    flex:0 0 auto;color:var(--muted);text-decoration:none;font-size:13px;font-weight:400;
+    letter-spacing:.02em;padding:15px 18px 14px;white-space:nowrap;transition:color .18s,font-weight .18s;
+  }
+  .catbar a.active{color:var(--ink);font-weight:600}
+
+  /* LAYOUT */
+  main{max-width:660px;margin:0 auto;padding:0 26px}
+  .section{padding-top:58px;scroll-margin-top:64px}
+  .sec-head{text-align:center;margin-bottom:26px}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:31px;color:var(--ink);line-height:1.1}
+
+  .group{margin-bottom:34px;break-inside:avoid;-webkit-column-break-inside:avoid}
+  .grp-label{
+    font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:14px;
+  }
+  .producer{
+    font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin:17px 0 10px;
+  }
+  .producer:first-of-type{margin-top:2px}
+
+  .item{padding:9px 0;border-bottom:1px solid var(--line)}
+  .item:last-child{border-bottom:0}
+  .row{display:flex;align-items:baseline;gap:14px}
+  .name{font-family:var(--serif);font-size:18.5px;font-weight:500;color:var(--ink);flex:1 1 auto}
+  .name .sz{font-family:var(--sans);font-size:11.5px;font-weight:400;color:var(--muted);letter-spacing:.02em;margin-left:7px}
+  .price{font-size:15px;font-weight:500;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .wdet{font-size:12px;color:var(--muted);margin-top:3px}
+  .wva{font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:.02em}
+
+  /* FOOTER */
+  footer{max-width:660px;margin:46px auto 0;padding:34px 26px 0;text-align:center}
+  .fdiv{height:1px;background:var(--line);margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+  .fdiv.top{margin-bottom:32px}
+  .fdiv.bottom{margin-top:36px;margin-bottom:30px}
+  footer .flogo{width:150px;height:auto;opacity:.92;display:block;margin:0 auto}
+  .flabel{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:22px}
+  .fphone{font-size:15px;font-weight:500;color:var(--ink);margin-top:5px}
+  .fphone a{color:inherit;text-decoration:none}
+  .flinks{margin-top:18px;font-size:12.5px;color:var(--ink);line-height:1.9}
+  .flinks a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .18s;padding-bottom:1px}
+  .flinks a:hover{border-bottom-color:var(--olive)}
+  .flinks .sep{color:var(--line);margin:0 8px}
+
+  .madeby{margin-top:0;padding-top:0}
+  .mlabel{font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);margin-bottom:5px}
+  .mname{font-size:11px;font-weight:500;color:var(--olived);letter-spacing:.02em}
+  .mcontact{font-size:10.5px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
+  .mcontact a{color:var(--olived);text-decoration:none;border-bottom:1px solid rgba(86,90,60,.35);padding-bottom:1px}
+
+  @media (max-width:380px){
+    .name{font-size:17.5px} .sec-head h2{font-size:27px}
+  }
+  /* DESKTOP — per-category two columns of subgroups */
+  @media (min-width:900px){
+    body{padding-bottom:64px}
+    .hero{padding:60px 24px 34px}
+    .logo{width:352px}
+    main{max-width:1060px;padding:0 48px}
+    .section{padding-top:78px;scroll-margin-top:66px}
+    .sec-head h2{font-size:34px}
+    .groups{column-count:2;column-gap:60px}
+    .group{margin-bottom:24px}
+    .item{transition:padding-left .16s ease,border-color .16s ease}
+    .item:hover{padding-left:6px;border-bottom-color:var(--olive)}
+    footer{max-width:1060px;padding-top:54px}
+  }
+  @media (min-width:1200px){ main,footer{max-width:1140px} }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="logo" src="logo.svg" alt="Kulla e Bajraktarit">
+  <div class="place" data-sq="Bogë · Alpet Shqiptare" data-en="Bogë · Albanian Alps">Bogë · Alpet Shqiptare</div>
+  <div class="lang" role="group" aria-label="Language">
+    <button id="btn-sq" class="active" onclick="setLang('sq')" aria-pressed="true">SQ</button>
+    <button id="btn-en" onclick="setLang('en')" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<nav class="catbar" id="catbar" aria-label="Kategoritë"></nav>
+<main id="menu"></main>
+
+<footer>
+  <div class="fdiv top"></div>
+  <img class="flogo" src="logo.svg" alt="Kulla e Bajraktarit">
+  <div class="flabel" data-sq="Rezervime" data-en="Reservations">Rezervime</div>
+  <div class="fphone"><a href="https://wa.me/355677088444">+355 67 708 8444</a></div>
+  <div class="flinks">
+    <a href="https://www.instagram.com/kullaebajraktarit" target="_blank" rel="noopener">Instagram</a><span class="sep">·</span><a href="https://kullaebajraktarit.com" target="_blank" rel="noopener" data-sq="Faqja" data-en="Website">Faqja</a><span class="sep">·</span><a href="https://www.google.com/maps/search/?api=1&query=Kulla%20e%20Bajraktarit&query_place_id=ChIJjX6L1c5zUhMRLNjHDsKPBi0" target="_blank" rel="noopener">Google Maps</a><span class="sep">·</span><a href="https://www.facebook.com/profile.php?id=100076000285867" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <div class="fdiv bottom"></div>
+  <div class="madeby">
+    <div class="mlabel" data-sq="Krijuar nga" data-en="Made by">Krijuar nga</div>
+    <div class="mname">Department of Software Solutions · arGEar</div>
+    <div class="mcontact"><a href="https://wa.me/355694341434">069 434 1434</a> · <a href="https://konsulenceargear.com" target="_blank" rel="noopener">konsulenceargear.com</a></div>
+  </div>
+</footer>
+
+<script>
+const menu = [{"id": "restorant", "sq": "Restorant", "en": "Restaurant", "groups": [{"sq": "Supa", "en": "Soup", "items": [{"sq": "Supe perime", "en": "Vegetable soup", "p": 400}, {"sq": "Supe fasule me mish te thate", "en": "Bean soup with dried meat", "p": 600}, {"sq": "Supe pule", "en": "Chicken soup", "p": 500}]}, {"sq": "Mesore", "en": "Appetizers", "items": [{"sq": "Antipaste e shpise (Fli + Byrek + Laknor + Japrake)", "en": "Traditional starter, different pie", "p": 500}, {"sq": "Meze e shpise (mix Djathe, Proshute)", "en": "Mixed traditional starter, mixed cheese, ham", "p": 1200}, {"sq": "Mix Proshute", "en": "Cold cuts", "p": 1500}, {"sq": "Djathe Dhie", "en": "Goat cheese", "p": 250}, {"sq": "Djath i Zier", "en": "Melted cheese", "p": 700}, {"sq": "Djath Ceremet", "en": "Oven baked feta", "p": 600}, {"sq": "Speca me maze ne furre", "en": "Oven baked peppers in cream sauce", "p": 600}, {"sq": "Patate me maze ne furre", "en": "Oven baked potatoes in cream sauce", "p": 600}, {"sq": "Kacimak", "en": "Type of mashed potatoes with meat", "p": 600}, {"sq": "Sallate Cobani", "en": "Shepherd's salad", "p": 500}, {"sq": "Sallate Fshati", "en": "Village salad", "p": 400}, {"sq": "Sallate Turshi", "en": "Pickled salad", "p": 300}, {"sq": "Salce Kosi", "en": "Sour yogurt sauce", "p": 400}]}, {"sq": "Pjata Kryesore", "en": "Main Dishes", "items": [{"sq": "Jufka me salce ragu, salcice derri", "en": "Pasta with ragu sauce, pork sausage", "p": 900}, {"sq": "Kec ose Qengj i pjekur me patate furre", "en": "Oven baked lamb or goat with potatoes", "sz": "400g", "p": 1700}, {"sq": "Mish Gici zgare", "en": "Grilled pork", "sz": "400 gr", "p": 1300}, {"sq": "Brinje Vici furre", "en": "Oven baked beef ribs", "p": 1700}, {"sq": "Berxolle Vici zgare", "en": "Grilled beef meat", "p": 1500}, {"sq": "Salcice derri", "en": "Pork sausage", "sz": "300 gr", "p": 900}, {"sq": "Qofte Shpiet (mish vici)", "en": "Homemade meatballs", "p": 900}, {"sq": "Te brenshme", "en": "Cooked organs", "sz": "300 gr", "p": 800}, {"sq": "Pule me Jufka", "en": "Whole chicken with pasta", "p": 4500}, {"sq": "Pule me oriz", "en": "Whole chicken with rice", "p": 4500}]}, {"sq": "Ëmbëlsira", "en": "Desserts", "items": [{"sq": "Kos me mjalte dhe arra", "en": "Yogurt with honey and walnuts", "p": 400}, {"sq": "Syltjazh", "en": "Rice pudding", "p": 200}, {"sq": "Bakllava", "en": "Baklava", "p": 250}]}]}, {"id": "pije", "sq": "Pije", "en": "Drinks", "groups": [{"sq": "Brendi & Konjak", "en": "Brandy & Cognac", "items": [{"sq": "Konjak Skenderbeu", "p": 300, "en": "Konjak Skenderbeu"}, {"sq": "Napolon", "p": 300, "en": "Napolon"}, {"sq": "Vecchia Romagna", "p": 350, "en": "Vecchia Romagna"}, {"sq": "Metaxa (me 5 Yje)", "en": "Metaxa (5 Stars)", "p": 350}, {"sq": "V.S. Martel", "p": 550, "en": "V.S. Martell"}, {"sq": "Courvosier", "p": 600, "en": "Courvoisier"}, {"sq": "Remy Martin VSOP", "p": 800, "en": "Remy Martin VSOP"}, {"sq": "Hennessey Fine", "p": 800, "en": "Hennessy Fine"}, {"sq": "Cognac Moisans VSOP", "p": 1000, "en": "Cognac Moisans VSOP"}, {"sq": "Henessey XO", "p": 2700, "en": "Hennessy XO"}, {"sq": "Cognac DEAU XO", "p": 3500, "en": "Cognac DEAU XO"}, {"sq": "Cognac DEAU Black", "p": 5400, "en": "Cognac DEAU Black"}]}, {"sq": "Pije të Tjera", "en": "Other Drinks", "items": [{"sq": "Raki Rrushi", "en": "Grape Raki", "p": 200}, {"sq": "Raki Kumbulle", "en": "Plum Raki", "p": 200}, {"sq": "Raki Thane", "en": "Cornelian Cherry Raki", "p": 250}, {"sq": "Rraki Arre", "en": "Walnut Raki", "p": 300}, {"sq": "Ouzo", "p": 250, "en": "Ouzo"}, {"sq": "Sambuca Molinari", "p": 350, "en": "Sambuca Molinari"}, {"sq": "Tequila", "p": 350, "en": "Tequila"}, {"sq": "Malibu", "p": 400, "en": "Malibu"}, {"sq": "Martini Bianco", "p": 300, "en": "Martini Bianco"}, {"sq": "Martini Roso", "p": 300, "en": "Martini Rosso"}, {"sq": "Bacardi", "p": 400, "en": "Bacardi"}, {"sq": "Campari", "p": 300, "en": "Campari"}, {"sq": "Cointreau", "p": 350, "en": "Cointreau"}, {"sq": "Limoncello", "p": 300, "en": "Limoncello"}]}, {"sq": "Birra", "en": "Beer", "items": [{"sq": "Birre Krikël (Bavaria)", "en": "Draft Beer", "sz": "0.3L", "p": 180}, {"sq": "Birre Krikël (Bavaria)", "en": "Draft Beer", "sz": "0.5L", "p": 320}, {"sq": "Bavaria 0% Alkol", "en": "Bavaria 0% Alcohol", "p": 250}, {"sq": "Korça", "p": 300, "en": "Korça"}, {"sq": "Heineken", "p": 350, "en": "Heineken"}, {"sq": "Benediktiner Hell", "p": 400, "en": "Benediktiner Hell"}, {"sq": "Benediktiner Weissbier", "p": 400, "en": "Benediktiner Weissbier"}, {"sq": "Budweisser", "p": 350, "en": "Budweiser"}]}, {"sq": "Amaro", "en": "Amaro", "items": [{"sq": "Montenegro", "p": 350, "en": "Montenegro"}, {"sq": "Dissarono", "p": 350, "en": "Disaronno"}, {"sq": "Ramazzoti", "p": 350, "en": "Ramazzotti"}, {"sq": "Amaro del Capo", "p": 800, "en": "Amaro del Capo"}, {"sq": "Averna", "p": 350, "en": "Averna"}, {"sq": "Jagermeister", "p": 350, "en": "Jagermeister"}, {"sq": "Fernet Branca", "p": 350, "en": "Fernet Branca"}]}, {"sq": "Verë Shtëpie", "en": "House Wine", "items": [{"sq": "Kuqe", "en": "Red Wine", "sz": "0.25L", "p": 250}, {"sq": "Kuqe", "en": "Red Wine", "sz": "0.5L", "p": 500}, {"sq": "Kuqe", "en": "Red Wine", "sz": "1L", "p": 1000}, {"sq": "Bardhe", "en": "White Wine", "sz": "0.25L", "p": 250}, {"sq": "Bardhe", "en": "White Wine", "sz": "0.5L", "p": 500}, {"sq": "Bardhe", "en": "White Wine", "sz": "1L", "p": 1000}]}, {"sq": "Pije të Ngrohta", "en": "Hot Drinks", "items": [{"sq": "Kafe", "en": "Espresso", "p": 100}, {"sq": "Kafe Makiato", "en": "Macchiato", "p": 100}, {"sq": "Latte Makiato", "en": "Latte", "p": 180}, {"sq": "Kapuçino me Kafe", "en": "Cappuccino with Coffee", "p": 180}, {"sq": "Korreto", "en": "Espresso Corretto", "p": 200}, {"sq": "Qumësht", "en": "Milk", "p": 120}, {"sq": "Kafe Germane", "en": "German Coffee", "p": 180}, {"sq": "Kakao", "en": "Cocoa", "p": 180}, {"sq": "Caj Agulice", "en": "Organic Primula Tea", "p": 200}, {"sq": "Caj Mali Bio", "en": "Organic Mountain Tea", "p": 150}]}, {"sq": "Uiski", "en": "Whiskey", "items": [{"sq": "Johnny Walker", "p": 400, "en": "Johnnie Walker"}, {"sq": "Johnny Walker i Zi", "en": "Johnnie Walker Black", "p": 500}, {"sq": "Baileys Crème Whiskey", "p": 400, "en": "Baileys Crème Whiskey"}, {"sq": "Ballantines", "p": 400, "en": "Ballantines"}, {"sq": "J&B", "p": 400, "en": "J&B"}, {"sq": "Camadion", "p": 400, "en": "Camadion"}, {"sq": "Jim Beam", "p": 500, "en": "Jim Beam"}, {"sq": "Jack Daniels", "p": 500, "en": "Jack Daniels"}, {"sq": "Glen Grand", "p": 500, "en": "Glen Grant"}, {"sq": "Chivas Regal", "p": 550, "en": "Chivas Regal"}, {"sq": "Jameson", "p": 600, "en": "Jameson"}]}, {"sq": "Xhin", "en": "Gin", "items": [{"sq": "Gordons", "p": 400, "en": "Gordons"}, {"sq": "Bombay Saphire", "p": 550, "en": "Bombay Sapphire"}, {"sq": "Hendricks", "p": 750, "en": "Hendricks"}]}, {"sq": "Vodka", "en": "Vodka", "items": [{"sq": "Smirnoff", "p": 400, "en": "Smirnoff"}, {"sq": "Absolute", "p": 500, "en": "Absolut"}, {"sq": "Belvedere", "p": 700, "en": "Belvedere"}, {"sq": "Grey Goose", "p": 800, "en": "Grey Goose"}]}, {"sq": "Pije Freskuese", "en": "Soft Drinks", "items": [{"sq": "B52", "p": 250, "en": "B52"}, {"sq": "Redbull", "p": 400, "en": "Red Bull"}, {"sq": "Grodino", "p": 250, "en": "Crodino"}, {"sq": "Bravo", "p": 220, "en": "Bravo"}, {"sq": "Çaj i Ftohtë", "en": "Iced Tea", "p": 220}, {"sq": "Nescafe", "p": 220, "en": "Nescafe"}, {"sq": "Coca-Cola", "p": 220, "en": "Coca-Cola"}, {"sq": "Coca-Cola Zero", "p": 220, "en": "Coca-Cola Zero"}, {"sq": "Ivi", "p": 220, "en": "Ivi"}, {"sq": "Fanta", "p": 220, "en": "Fanta"}, {"sq": "Tonic Schweppes", "p": 220, "en": "Tonic Schweppes"}, {"sq": "Lemon Soda", "p": 220, "en": "Lemon Soda"}, {"sq": "Orange Soda", "p": 220, "en": "Orange Soda"}, {"sq": "Rose Lemonade", "p": 350, "en": "Rose Lemonade"}, {"sq": "Uje Natyral", "en": "Natural Water", "sz": "0.5L", "p": 120}, {"sq": "Uje i Gazuar", "en": "Sparkling Water", "sz": "0.5L", "p": 120}, {"sq": "Uje Natyral", "en": "Natural Water", "sz": "0.75L", "p": 250}]}]}, {"id": "vererat", "sq": "Verërat", "en": "Wines", "groups": [{"sq": "Verërat e Kuqe", "en": "Red Wines", "wine": true, "items": [{"sq": "Papale Linea Oro Primitivo di Manduria", "en": "Papale Linea Oro Primitivo di Manduria", "kantina": "Varvaglione", "rajoni": "Puglia", "varieteti": "Primitivo", "vol": "0.75L", "abv": "14.5%", "p": 6500}, {"sq": "Filograno Primitivo di Manduria", "en": "Filograno Primitivo di Manduria", "kantina": "Varvaglione", "rajoni": "Puglia", "varieteti": "Primitivo", "vol": "0.75L", "abv": "14.5%", "p": 4500}, {"sq": "Madia Biologico Montepulciano d'Abruzzo", "en": "Madia Biologico Montepulciano d'Abruzzo", "kantina": "Torre Zambra", "rajoni": "Abruzzo", "varieteti": "Montepulciano", "vol": "0.75L", "abv": "13.5%", "p": 3500}, {"sq": "Cagiolo Montepulciano d'Abruzzo Riserva", "en": "Cagiolo Montepulciano d'Abruzzo Riserva", "kantina": "Tollo", "rajoni": "Abruzzo", "varieteti": "Montepulciano", "vol": "0.75L", "abv": "14.5%", "p": 6000}, {"sq": "Barolo Serralunga D'Alba", "en": "Barolo Serralunga D'Alba", "kantina": "Fontanafredda", "rajoni": "Piemonte", "varieteti": "Nebbiolo", "vol": "0.75L", "abv": "14%", "p": 13000}, {"sq": "Testarossa Montepulciano d'Abruzzo", "en": "Testarossa Montepulciano d'Abruzzo", "kantina": "Pasetti", "rajoni": "Abruzzo", "varieteti": "Montepulciano", "vol": "0.75L", "abv": "14.5%", "p": 6000}, {"sq": "Amarone della Valpolicella Classico", "en": "Amarone della Valpolicella Classico", "kantina": "Santa Sofia", "rajoni": "Veneto", "varieteti": "Corvina, Rondinella, Molinara", "vol": "0.75L", "abv": "15%", "p": 9000}, {"sq": "Antichello Amarone della Valpolicella Docg", "en": "Antichello Amarone della Valpolicella Docg", "kantina": "Santa Sofia", "rajoni": "Veneto", "varieteti": "Corvina, Rondinella, Corvinone", "vol": "0.75L", "abv": "15%", "p": 9000}, {"sq": "Barolo Riserva", "en": "Barolo Riserva", "kantina": "Salvano", "rajoni": "Piemonte", "varieteti": "Nebbiolo", "vol": "0.75L", "abv": "14%", "p": 18000}, {"sq": "Brunello di Montalcino", "en": "Brunello di Montalcino", "kantina": "San Polo", "rajoni": "Toscana", "varieteti": "Sangiovese", "vol": "0.75L", "abv": "14.5%", "p": 14000}, {"sq": "Primitivo di Manduria Cosimo Varvaglione Collezione Privata", "en": "Primitivo di Manduria Cosimo Varvaglione Collezione Privata", "kantina": "Varvaglione", "rajoni": "Puglia", "varieteti": "Primitivo", "vol": "0.75L", "abv": "15%", "p": 17000}, {"sq": "Gran Reserva Rioja", "en": "Gran Reserva Rioja", "kantina": "Marqués de Cáceres", "rajoni": "Rioja", "varieteti": "Tempranillo, Garnacha tinta, Graciano", "vol": "0.75L", "abv": "13.5%", "p": 7000}, {"sq": "Amarone della Valpolicella Pietro dal Cero", "en": "Amarone della Valpolicella Pietro dal Cero", "kantina": "Cà dei Frati", "rajoni": "Veneto", "varieteti": "Corvinone, Corvina, Rondinella, Croatina", "vol": "0.75L", "abv": "17%", "p": 29000}]}, {"sq": "Verërat e Bardha", "en": "White Wines", "wine": true, "items": [{"sq": "Donnaluce", "en": "Donnaluce", "kantina": "Poggio le Volpi", "rajoni": "Lazio", "varieteti": "Chardonnay, Malvasia, Greco", "vol": "0.75L", "abv": "13.5%", "p": 5500}, {"sq": "Chardonnay Vino dell'Amicizia", "en": "Chardonnay Vino dell'Amicizia", "kantina": "Italo Cescon", "rajoni": "Veneto", "varieteti": "Chardonnay", "vol": "0.75L", "abv": "12.5%", "p": 2500}, {"sq": "Greco di Tufo 'Il Cavaliere'", "en": "Greco di Tufo 'Il Cavaliere'", "kantina": "D'Antiche Terre", "rajoni": "Campania", "varieteti": "Greco", "vol": "0.75L", "abv": "13%", "p": 3000}, {"sq": "Sauvignon", "en": "Sauvignon", "kantina": "Kaltern", "rajoni": "Alto Adige", "varieteti": "Sauvignon", "vol": "0.75L", "abv": "13%", "p": 3500}, {"sq": "Pinot Grigio Vino dell'Amicizia", "en": "Pinot Grigio Vino dell'Amicizia", "kantina": "Italo Cescon", "rajoni": "Veneto", "varieteti": "Pinot Grigio", "vol": "0.75L", "abv": "12.5%", "p": 2500}, {"sq": "Franciacorta Brut 25", "en": "Franciacorta Brut 25", "kantina": "Fratelli Berlucchi", "rajoni": "Lombardia", "varieteti": "Chardonnay", "vol": "0.75L", "abv": "12.5%", "p": 4000}, {"sq": "Prosecco Millesimato", "en": "Prosecco Millesimato", "kantina": "Iris Vigneti", "rajoni": "Veneto", "varieteti": "Glera", "vol": "0.75L", "abv": "11%", "p": 3000}]}, {"sq": "Verëra Shqiptare", "en": "Albanian Wines", "items": [{"producer": "Verë Shtëpie / House Wine", "sq": "Chardonnay – Verë Shtëpie (Shishe)", "en": "Chardonnay – House Wine (Bottle)", "p": 1600}, {"producer": "Verë Shtëpie / House Wine", "sq": "Pulsi – Verë Shtëpie (Shishe)", "en": "Pulsi House Wine (Bottle)", "p": 1400}, {"producer": "Duka", "sq": "Tempranillo", "p": 2500, "en": "Tempranillo"}, {"producer": "Duka", "sq": "Merlot", "p": 2500, "en": "Merlot"}, {"producer": "Duka", "sq": "Cabernet Sauvignon", "p": 3000, "en": "Cabernet Sauvignon"}, {"producer": "Duka", "sq": "Duka Reserva", "p": 7000, "en": "Duka Reserva"}, {"producer": "Duka", "sq": "Shesh i Bardhë", "p": 3000, "en": "Shesh i Bardhë"}, {"producer": "Nurellari", "sq": "Pulsi i Beratit", "p": 2500, "en": "Pulsi i Beratit"}, {"producer": "Nurellari", "sq": "Montemeca", "p": 2500, "en": "Montemeca"}, {"producer": "Nurellari", "sq": "Nurellari Superiore Reserva", "p": 7000, "en": "Nurellari Superiore Reserva"}, {"producer": "Nurellari", "sq": "Serina", "p": 5000, "en": "Serina"}, {"producer": "Nurellari", "sq": "Serina Rose", "p": 2800, "en": "Serina Rose"}, {"producer": "Medaur", "sq": "Trebbiano", "p": 1500, "en": "Trebbiano"}, {"producer": "Medaur", "sq": "Chardonnay Barrique", "p": 2200, "en": "Chardonnay Barrique"}, {"producer": "Medaur", "sq": "Kallmet Reserva", "p": 3000, "en": "Kallmet Reserva"}, {"producer": "Medaur", "sq": "Chardonnay", "sz": "0.375 ml", "p": 1200, "en": "Chardonnay"}, {"producer": "Medaur", "sq": "Kallmet Reserve", "sz": "0.375 ml", "p": 1600, "en": "Kallmet Reserve"}, {"producer": "Medaur", "sq": "Vermentino", "p": 2800, "en": "Vermentino"}, {"producer": "Medaur", "sq": "Kallmet Prestigj", "p": 3000, "en": "Kallmet Prestigj"}, {"producer": "Medaur", "sq": "Kallmet Privilegj", "p": 5500, "en": "Kallmet Privilegj"}, {"producer": "Medaur", "sq": "Kallmet i Bardhë", "p": 2000, "en": "Kallmet i Bardhë"}]}]}];
+const CUR = "L";
+let lang = "sq", navLock = false, navLockTimer = null;
+const menuEl = document.getElementById("menu");
+const catbarEl = document.getElementById("catbar");
+
+function fmtPrice(p){
+  let s = String(p), out = "";
+  while(s.length > 3){ out = "." + s.slice(-3) + out; s = s.slice(0,-3); }
+  return s + out;
+}
+function esc(t){ return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function centerChip(chip){
+  const cb = catbarEl;
+  if(cb.scrollWidth <= cb.clientWidth + 1) return;            // not scrollable (desktop) -> nothing to do
+  const left = cb.scrollLeft + chip.getBoundingClientRect().left - cb.getBoundingClientRect().left - (cb.clientWidth - chip.offsetWidth)/2;
+  cb.scrollTo({left: Math.max(0,left), behavior:"smooth"});
+}
+
+function itemRow(it){
+  const nm = esc(lang==="sq" ? it.sq : (it.en||it.sq));
+  const sz = it.sz ? ` <span class="sz">${esc(it.sz)}</span>` : "";
+  let det = "";
+  if(it.kantina || it.rajoni){
+    const d1 = [it.kantina, it.rajoni, it.varieteti].filter(Boolean).map(esc).join(" · ");
+    const d2 = [it.vol, it.abv].filter(Boolean).map(esc).join(" · ");
+    if(d1) det += `<div class="wdet">${d1}</div>`;
+    if(d2) det += `<div class="wva">${d2}</div>`;
+  }
+  return `<div class="item"><div class="row"><span class="name">${nm}${sz}</span>`
+       + `<span class="price">${fmtPrice(it.p)} ${CUR}</span></div>${det}</div>`;
+}
+
+function groupBlock(g){
+  const label = esc(lang==="sq" ? g.sq : (g.en||g.sq));
+  let inner = "";
+  const hasProd = g.items.some(it => it.producer);
+  if(hasProd){
+    const order = [], seen = {};
+    g.items.forEach(it => { const p = it.producer||""; if(!(p in seen)){ seen[p]=[]; order.push(p); } seen[p].push(it); });
+    order.forEach(p => {
+      if(p) inner += `<div class="producer">${esc(p)}</div>`;
+      inner += seen[p].map(itemRow).join("");
+    });
+  } else {
+    inner = g.items.map(itemRow).join("");
+  }
+  return `<div class="group"><div class="grp-label">${label}</div>${inner}</div>`;
+}
+
+function render(){
+  menuEl.innerHTML = ""; catbarEl.innerHTML = "";
+  menu.forEach((cat, idx) => {
+    const a = document.createElement("a");
+    a.href = "#" + cat.id; a.dataset.target = cat.id;
+    a.textContent = lang==="sq" ? cat.sq : (cat.en||cat.sq);
+    a.onclick = (e) => {
+      e.preventDefault(); navLock = true;
+      [...catbarEl.querySelectorAll("a")].forEach(c => c.classList.toggle("active", c===a));
+      const t = document.getElementById(cat.id);
+      if(t){
+        if(idx === 0) window.scrollTo({top: catbarEl.offsetTop, behavior:"smooth"});
+        else t.scrollIntoView({behavior:"smooth",block:"start"});
+      }
+      centerChip(a);
+      clearTimeout(navLockTimer); navLockTimer = setTimeout(()=>{navLock=false;}, 850);
+    };
+    catbarEl.appendChild(a);
+
+    const s = document.createElement("section");
+    s.className = "section"; s.id = cat.id;
+    const title = esc(lang==="sq" ? cat.sq : (cat.en||cat.sq));
+    s.innerHTML = `<div class="sec-head"><h2>${title}</h2></div>`
+                + `<div class="groups">${cat.groups.map(groupBlock).join("")}</div>`;
+    menuEl.appendChild(s);
+  });
+  document.querySelectorAll("[data-sq]").forEach(el => { el.textContent = lang==="sq" ? el.dataset.sq : el.dataset.en; });
+  document.documentElement.lang = lang;
+  setupObserver();
+}
+
+function setLang(l){
+  lang = l;
+  document.getElementById("btn-sq").classList.toggle("active", l==="sq");
+  document.getElementById("btn-en").classList.toggle("active", l==="en");
+  document.getElementById("btn-sq").setAttribute("aria-pressed", l==="sq");
+  document.getElementById("btn-en").setAttribute("aria-pressed", l==="en");
+  render();
+}
+
+let observer;
+function setupObserver(){
+  if(observer) observer.disconnect();
+  const chips = [...catbarEl.querySelectorAll("a")];
+  observer = new IntersectionObserver((entries) => {
+    if(navLock) return;
+    entries.forEach(en => {
+      if(en.isIntersecting){
+        const id = en.target.id;
+        chips.forEach(c => {
+          const on = c.dataset.target === id;
+          c.classList.toggle("active", on);
+          if(on) centerChip(c);
+        });
+      }
+    });
+  }, {rootMargin:"-48px 0px -72% 0px", threshold:0});
+  menu.forEach(cat => { const el = document.getElementById(cat.id); if(el) observer.observe(el); });
+}
+
+render();
+</script>
+</body>
+</html>
